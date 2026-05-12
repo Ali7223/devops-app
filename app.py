@@ -8,5 +8,6 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         message = os.getenv("MESSAGE", "Default Message")
         self.wfile.write(message.encode())
+        self.wfile.write("Hello from CI-CD Pipeline 🚀".encode())
 
 HTTPServer(('0.0.0.0', 8080), Handler).serve_forever()
